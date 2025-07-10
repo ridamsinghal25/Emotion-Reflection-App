@@ -17,7 +17,9 @@ async def get_emotions():
 async def get_all_emotions(request: Request):
     user = authenticate_and_get_user_details(request)
 
-    emotions = emotions_collection.find({ "user_id": user["_id"]})
+    print("user", user["_id"])
+
+    emotions = emotions_collection.find({ "user_id": str(user["_id"])})
 
     return {"success": True, "data": all_emotions(emotions), "message": "Emotions fetched successfully"}
 

@@ -1,13 +1,17 @@
 from fastapi import FastAPI, Request, Response , HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from src.router import emotion_router, webhook
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[os.getenv("CORS_ORIGIN")],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

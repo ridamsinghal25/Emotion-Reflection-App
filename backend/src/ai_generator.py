@@ -66,5 +66,6 @@ def generate_emotion(user_emotion:str) -> Dict[str, Any]:
         return {
             "emotion": None,
             "confidence": None,
-            "analysis": None
+            "analysis": None,
+            "created_at": datetime.utcnow(),
         }

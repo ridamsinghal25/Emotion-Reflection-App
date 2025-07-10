@@ -17,28 +17,27 @@ async def get_emotions():
 async def get_all_emotions(request: Request):
     user = authenticate_and_get_user_details(request)
 
-    emotions = emotions_collection.find({user_id: user._id})
+    emotions = emotions_collection.find({ "user_id": user["_id"]})
 
-    return {"success": True, "emotions": all_emotions(emotions), "message": "Emotions fetched successfully"}
+    return {"success": True, "data": all_emotions(emotions), "message": "Emotions fetched successfully"}
 
 
 @emotion_router.post("/create-emotion", summary="Create a new emotion")
 async def create_emotion(payload: EmotionRequest, request: Request):
     try:
-
         user = authenticate_and_get_user_details(request)
 
         user_emotion = payload.user_emotion
 
         new_emotion = generate_emotion(user_emotion)
 
-        new_emotion["user_id"] = str(user._id)
+        new_emotion["user_id"] = str(user["_id"])
 
         response = emotions_collection.insert_one(dict(new_emotion))
 
         emotion = emotions_collection.find_one({"_id": response.inserted_id})
 
-        return {"success": True, "emotion": individual_emotion(emotion), "message": "Emotion created successfully"}
+        return {"success": True, "data": individual_emotion(emotion), "message": "Emotion created successfully"}
 
     except Exception as e:
         return HTTPException(status_code=500, detail=str(e))

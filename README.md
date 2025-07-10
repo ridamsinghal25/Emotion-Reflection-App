@@ -2,6 +2,10 @@
 
 MoodMirror is an **emotion reflection tool** that helps users analyze their emotions based on text input. It uses AI to detect the dominant emotional state, provide confidence scores, and generate a detailed analysis.
 
+### 🔗 Demo Video
+
+[Watch on LinkedIn](https://www.linkedin.com/posts/ridamsinghal25_fastapi-js-python-activity-7349019052008226816-SMzQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxWRngBqjICNBGAmAMt_LzNl3w2f_9-Rso)
+
 This is a full-stack application with:
 
 - 🖥️ **Frontend**: React (Vite) + Tailwind CSS

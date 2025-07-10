@@ -1,0 +1,6 @@
+certifi==2025.7.9
+distlib==0.3.9
+filelock==3.18.0
+platformdirs==4.3.8
+uv==0.7.19
+virtualenv==20.31.2

@@ -9,15 +9,9 @@ from src.utils.clerk_authentication import authenticate_and_get_user_details
 
 emotion_router = APIRouter()
 
-async def get_emotions():
-    print("get_emotions")
-    return
-
 @emotion_router.get("/get-emotions", summary="Get all the emotions of user")
 async def get_all_emotions(request: Request):
     user = authenticate_and_get_user_details(request)
-
-    print("user", user["_id"])
 
     emotions = emotions_collection.find({ "user_id": str(user["_id"])})
 

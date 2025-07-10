@@ -17,6 +17,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Health Check
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 app.include_router(emotion_router.emotion_router, prefix="/emotion")
 app.include_router(webhook.router, prefix="/webhook")
 

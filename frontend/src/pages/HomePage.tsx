@@ -7,12 +7,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Textarea } from "../components/ui/textarea";
-import { Label } from "../components/ui/label";
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { Loader2, Brain, Heart, Bot } from "lucide-react";
-import { useAxiosFetcher } from "../hooks/use-fetch";
+import { useAxiosFetcher } from "@/hooks/use-fetch";
 
 export default function HomePage() {
   const [text, setText] = useState("");

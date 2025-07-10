@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from "../components/ui/card";
-import { Button } from "../components/ui/button";
-import { Badge } from "../components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Trash2, Brain, Calendar, Loader2 } from "lucide-react";
 import {
   AlertDialog,
@@ -15,8 +15,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../components/ui/alert-dialog";
-import { useAxiosFetcher } from "../hooks/use-fetch";
+} from "@/components/ui/alert-dialog";
+import { useAxiosFetcher } from "@/hooks/use-fetch";
 
 interface Emotion {
   id: string;
